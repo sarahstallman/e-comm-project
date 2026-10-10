@@ -1,6 +1,6 @@
 # Personal Project Blueprint: E-Commerce Modern Data Stack (MDS) Pipeline
 
-This project simulates a modern data engineering pipeline for an e-commerce/retail brand like Vuori. You will ingest raw e-commerce data (orders, customer interactions, inventory), store it as semi-structured data, and transform it using the exact tech stack described.
+This project simulates a modern data engineering pipeline for an e-commerce/retail brand. I will ingest raw e-commerce data (orders, customer interactions, inventory), store it as semi-structured data, and transform it using the tech stack described.
 
 ## 🛠️ Architecture & Tech Stack
 * **Orchestration & Ingestion:** Python (simulating Azure Data Factory or Airflow) + REST APIs
