@@ -61,13 +61,17 @@ def generate_nested_orders(num_orders=100):
 
 if __name__ == "__main__":
     mock_dataset = generate_nested_orders(100)
-    output_dir = "raw-data"
+
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.dirname(script_dir)
+
+    output_dir = os.path.join(project_root, "raw-data")
     output_filename = "raw_orders_data.json"
-    full_output_path = os.path.join(output_dir, output_filename)
+    full_output_path = os.path.join(output_dir, "raw_orders_data.json")
 
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
-        print(f"Created new directory: '{output_dir}/'")
+        print(f"Created new sibling directory: '{output_dir}/'")
 
     with open(full_output_path, "w") as f:
         json.dump(mock_dataset, f, indent=4)
