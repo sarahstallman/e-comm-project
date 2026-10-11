@@ -60,9 +60,15 @@ def generate_nested_orders(num_orders=100):
 
 if __name__ == "__main__":
     mock_dataset = generate_nested_orders(100)
+    output_dir = "raw-data"
     output_filename = "raw_orders_data.json"
+    full_output_path = os.path.join(output_dir, output_filename)
 
-    with open(output_filename, "w") as f:
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+        print(f"Created new directory: '{output_dir}/'")
+
+    with open(full_output_path, "w") as f:
         json.dump(mock_dataset, f, indent=4)
 
     print(f" Success! Generated 100 nested orders and saved to '{output_filename}'.")
