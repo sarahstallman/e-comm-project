@@ -66,7 +66,6 @@ if __name__ == "__main__":
     project_root = os.path.dirname(script_dir)
 
     output_dir = os.path.join(project_root, "raw-data")
-    output_filename = "raw_orders_data.json"
     full_output_path = os.path.join(output_dir, "raw_orders_data.json")
 
     if not os.path.exists(output_dir):
