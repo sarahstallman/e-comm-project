@@ -3,8 +3,12 @@ import json
 import snowflake.connector
 from dotenv import load_dotenv
 
-# Load credentials from your local secret .env file
-load_dotenv()
+script_dir = os.path.dirname(os.path.abspath(__file__)) # python-code/
+project_root = os.path.dirname(script_dir)             # project root
+env_path = os.path.join(project_root, ".env")           # path to .env
+
+# Load your secret configurations using the absolute path
+load_dotenv(dotenv_path=env_path)
 
 
 def upload_json_to_snowflake():
