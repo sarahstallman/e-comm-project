@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: raw_source
+    database: RAW_ZONE
+    schema: ECOMM
+    tables:
+      - name: stg_orders_raw

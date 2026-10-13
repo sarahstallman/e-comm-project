@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: mart_product_performance
+    description: "Business-ready product sales metrics for the apparel catalog."
+    columns:
+      - name: product_id
+        description: "The primary identifier for each apparel style."
+        tests:
+          - unique
+          - not_null
+
+      - name: total_units_sold
+        description: "Aggregated sales volume counter."
+        tests:
+          - not_null
+
+      - name: total_gross_revenue
+        description: "Summed gross performance revenue."
+        tests:
+          - not_null
