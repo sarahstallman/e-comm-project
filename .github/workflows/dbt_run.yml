@@ -1,0 +1,42 @@
+name: dbt_integration_pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  run_and_test_dbt:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 1. Checkout Repository Code
+        uses: actions/checkout@v4
+
+      - name: 2. Install Python 3.9 Environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: 3. Install Dependencies & dbt
+        run: |
+          pip install --upgrade pip
+          pip install dbt-snowflake python-dotenv
+
+      - name: 4. Execute dbt Compile & Test Suite
+        # We tell dbt where to find your files and inject GitHub Repository Secrets securely
+        working-directory: ./ecomm_analytics
+        env:
+          SF_ACCOUNT: ${{ secrets.SF_ACCOUNT }}
+          SF_USER: ${{ secrets.SF_USER }}
+          SF_PASSWORD: ${{ secrets.SF_PASSWORD }}
+          SF_ROLE: ${{ secrets.SF_ROLE }}
+          SF_WAREHOUSE: ${{ secrets.SF_WAREHOUSE }}
+          SF_DATABASE: ${{ secrets.SF_DATABASE }}
+          SF_SCHEMA: ${{ secrets.SF_SCHEMA }}
+        run: |
+          dbt deps
+          dbt debug
+          dbt run
+          dbt test
