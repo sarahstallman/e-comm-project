@@ -56,7 +56,7 @@ jobs:
           SF_WAREHOUSE: ${{ secrets.SF_WAREHOUSE }}
           SF_DATABASE: ${{ secrets.SF_DATABASE }}
           SF_SCHEMA: ${{ secrets.SF_SCHEMA }}
-        # We append --profiles-dir . to explicitly point dbt to our newly created file
+        # We append --profiles-dir . to explicitly point dbt to the newly created file
         run: |
           dbt deps
           dbt debug --profiles-dir .
