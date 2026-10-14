@@ -3,3 +3,7 @@ target/
 dbt_packages/
 logs/
 .env
+.idea/
+*.iml
+raw-data/
+*.json
