@@ -9,10 +9,9 @@ env_path = os.path.join(project_root, ".env")
 print(f"Looking for .env file at: {env_path}")
 print(f"Does the file physically exist there? {os.path.exists(env_path)}")
 
-# Attempt to load the file
 load_dotenv(dotenv_path=env_path)
 
-# Print variables out to the console (Hiding passwords for safety)
+# Print variables out to the console
 print("\n--- Environmental Values Read By Python ---")
 print(f"SF_ACCOUNT: {os.getenv('SF_ACCOUNT')}")
 print(f"SF_USER:    {os.getenv('SF_USER')}")
