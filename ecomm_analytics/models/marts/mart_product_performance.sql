@@ -15,7 +15,7 @@ product_aggregates as (
         count(distinct order_id) as unique_orders_count,
         round(avg(item_quantity), 2) as average_basket_quantity
     from staging_orders
-    where payment_status = 'PAID' -- Only analyze successful revenue!
+    where payment_status = 'PAID' -- Only analyze successful revenue
     group by 1, 2, 3
 )
 
