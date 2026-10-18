@@ -38,7 +38,7 @@ Organize transformations using dbt to transform raw data into analytical models.
 
 ---
 
-## 📈 Retail Analytics Use Cases to Solve
+## Retail Analytics Use Cases to Solve
 Once the pipeline runs, write final analytical queries to answer:
 * **Abandoned Cart/Order Analytics:** Average basket size, items per order, and revenue impacts of discount codes.
 * **Inventory Turnover:** Identifying low-stock items based on real-time simulated order velocity.
