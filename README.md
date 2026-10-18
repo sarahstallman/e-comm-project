@@ -6,7 +6,7 @@ This project simulates a data engineering pipeline for an e-commerce/retail bran
 
 ## Architecture & Tech Stack
 * **Orchestration & Ingestion:** Python (simulating Azure Data Factory or Airflow) + REST APIs
-* **Data Warehouse:** Snowflake (Free Trial)
+* **Data Warehouse:** Snowflake
 * **Transformation & Modeling:** dbt Core (Data Build Tool)
 * **CI/CD & Automation:** GitHub Actions
 
