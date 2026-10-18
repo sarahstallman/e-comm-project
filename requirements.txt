@@ -1,0 +1,4 @@
+dbt-snowflake==1.12.*
+faker
+snowflake-connector-python
+python-dotenv
